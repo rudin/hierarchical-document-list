@@ -85,6 +85,13 @@ export interface TreeInputOptions {
    * Defautlt: 'hierarchy.tree' - this schema is bundled with the plugin
    */
   documentType?: string
+
+  /**
+   * (Optional)
+   * Controls the initial expansion state of all collections.
+   * If true (default), collections start expanded; if false, they start collapsed.
+   */
+  expanded?: Boolean
 }
 
 export interface TreeFieldSchema
