@@ -32,7 +32,8 @@ const TreeEditor: React.FC<{
 
   const {localTree, handleVisibilityToggle} = useLocalTree({
     tree: props.tree,
-    allItems
+    allItems,
+    options: { expanded: props.options.expanded ?? true }
   })
 
   const operations = useTreeOperationsProvider({

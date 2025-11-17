@@ -13,9 +13,11 @@ import {dataToEditorTree} from '../utils/treeData'
 export default function useLocalTree({
   tree,
   allItems,
+  options,
 }: {
   tree: StoredTreeItem[]
   allItems: AllItems
+  options: {expanded: Boolean}
 }): {
   handleVisibilityToggle: (data: any) => void
   localTree: LocalTreeItem[]
@@ -34,6 +36,7 @@ export default function useLocalTree({
       tree,
       allItems,
       visibilityMap,
+      options,
     }),
     handleVisibilityToggle,
   }

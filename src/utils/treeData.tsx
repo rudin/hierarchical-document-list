@@ -18,11 +18,13 @@ import {INTERNAL_NODE_TYPE, INTERNAL_NODE_VALUE_TYPE} from './injectNodeTypeInPa
 export const dataToEditorTree = ({
   tree,
   allItems,
-  visibilityMap
+  visibilityMap,
+  options,
 }: {
   tree: StoredTreeItem[]
   allItems: AllItems
   visibilityMap: VisibilityMap
+  options: {expanded: Boolean}
 }): LocalTreeItem[] => {
   const itemsWithTitle = tree
     .filter((item) => item?.value?.reference?._ref)
@@ -34,7 +36,7 @@ export const dataToEditorTree = ({
 
       const enhancedItem: LocalTreeItem = {
         ...item,
-        expanded: visibilityMap[item._key] === true,
+        expanded: options.expanded === false ? visibilityMap[item._key] === true : visibilityMap[item._key] !== false,
         draftId: draftDoc?._id,
         publishedId: publishedDoc?._id,
         draftUpdatedAt: draftDoc?._updatedAt,
