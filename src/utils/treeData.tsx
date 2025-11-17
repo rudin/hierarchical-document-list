@@ -34,7 +34,7 @@ export const dataToEditorTree = ({
 
       const enhancedItem: LocalTreeItem = {
         ...item,
-        expanded: visibilityMap[item._key] !== false,
+        expanded: visibilityMap[item._key] === true,
         draftId: draftDoc?._id,
         publishedId: publishedDoc?._id,
         draftUpdatedAt: draftDoc?._updatedAt,
