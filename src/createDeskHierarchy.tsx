@@ -25,6 +25,13 @@ export interface TreeProps extends TreeDeskStructureProps {
    * Restrict document types that can be created.
    */
   creatableTypes?: string[]
+
+  /**
+    * (Optional)
+    * Controls the initial expansion state of all collections.
+    * If true (default), collections start expanded; if false, they start collapsed.
+    */
+  expanded?: Boolean
 }
 
 const deskTreeValidator = (props: TreeProps): React.FC => {
